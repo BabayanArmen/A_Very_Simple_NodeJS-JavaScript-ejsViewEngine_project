@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/news.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- nav bar -->
+    <%- include('includes/header.ejs') %>
+    <!-- nav bar -->
+
+
+    <div class="news">
+        <h2>News</h2>
+        <p>some text here..</p>
+    </div>
+
+    <% for(let article of articles) { %>
+        <div class="article">
+            <p class="headline"><strong><%= article.headline %></strong></p>
+            <p class="conent"><%= article.article %></p>
+        </div>
+    <% } %>
+
+    <script src="/js/mainScript.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

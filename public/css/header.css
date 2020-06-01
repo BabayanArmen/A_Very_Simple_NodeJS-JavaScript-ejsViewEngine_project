@@ -1,0 +1,40 @@
+/* nav bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(32, 77, 69);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: rgb(69, 179, 161);
+  }
+  
+  .active {
+    background-color: rgb(28, 58, 59);
+  }
+  .login{
+    float: right;
+    display: block;
+  }
+  .logout{
+    float: right;
+    display: none;
+  }
+  .showAdmin{
+    display: none;
+  }
+  

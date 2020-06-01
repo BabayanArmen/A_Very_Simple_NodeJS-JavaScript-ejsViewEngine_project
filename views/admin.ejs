@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <!-- nav bar -->
+        <%- include('includes/header.ejs') %>
+        <!-- nav bar -->
+    
+    <h1>Admin Page</h1>
+
+    <input id="headline" type="text" placeholder="enter headline">
+    <br>
+    <textarea name="" id="article" cols="30" rows="10" placeholder="enter main article"></textarea>
+    <br>
+    <button onclick="addArticle()">Add Article</button>
+
+
+    <script src="/js/mainScript.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

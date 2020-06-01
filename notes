@@ -1,0 +1,49 @@
+user login:a	password:a
+admin login:admin	password:admin
+///////////////////////////////////////////////////////////
+view engines
+
+#npm install --save ejs
+
+//////////////////////////////////////////////COOKIE////////
+cookies
+#npm install cookie-parser --save
+
+in main.js add this const 
+	cookieParser = require('cookie-parser')
+	app.use(cookieParser())
+	
+	in response add this
+	res.cookie('cookieName', 'somthing')
+	
+to remove cookie in logout contorller add this res.clearCookie('cookieName')	
+	
+or use session (cookie) //////////////////////SESSION COOKIE////////
+	
+#npm install --save express-session
+and add this in main.js
+app.use(session({secret: 'secret-key', resave: false, saveUninitialized: false}))
+and also need to add this req.session.isLoggedIN = "something" in login controller
+
+to save sessions in mongoDB we need this
+#npm install --save connect-mongodb-session
+then in main.js
+
+const MongoDBStore = require('connect-mongodb-ssesion')(session)
+const store = MongoDBStore({
+	uri: MONGODB_URI,
+	collection: 'sessions'
+})
+
+also add store
+app.use(session({secret: 'secret-key', resave: false, saveUninitialized: false, store: store}))
+
+also we can add this in login, to make sure that session is created, but we cant do not use this
+	 req.session.isLoggedIN = "something"
+	 req.session.save((err) => {
+	 console.log(err)
+	 res.status(200).json({login: true})
+	 }
+
+also we need req.session.destroy((err) => {}) in logout, to remove session from mongoDB store when we logging out
+////////////////////////////////////////////////////
